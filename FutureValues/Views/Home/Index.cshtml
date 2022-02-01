@@ -1,15 +1,9 @@
 ﻿@model FutureValueModel
 @{
-    Layout = null;
+    ViewBag.Title = "Future Value Calculator";
+    Layout = "_Layout";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="../../wwwroot/css/custom.css" type="text/css"/>
-    <title>Home Page</title>
-</head>
-<body>
+
     <h1>Future Value Calculator</h1>
     <form asp-action="Index" method="post">
         <div>
@@ -31,5 +25,4 @@
         <button type="submit">Calculate</button>
         <a asp-action="Index">Clear</a>
     </form>
-</body>
-</html>
+
