@@ -1,8 +1,35 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model FutureValueModel
+@{
+    Layout = null;
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../wwwroot/css/custom.css" type="text/css"/>
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Future Value Calculator</h1>
+    <form asp-action="Index" method="post">
+        <div>
+            <label asp-for="MonthlyInvestment">Monthly Investment:</label>
+            <input asp-for="MonthlyInvestment" />
+        </div>
+        <div>
+            <label asp-for="YearlyinterestRate">Yearly Interest Rate:</label>
+            <input asp-for="YearlyinterestRate" />
+        </div>
+        <div>
+            <label asp-for="Years">Number of Years:</label>
+            <input asp-for="Years" />
+        </div>
+        <div>
+            <label>Future Value:</label>
+            <input value="@ViewBag.FV.ToString("C2")" readonly>
+        </div>
+        <button type="submit">Calculate</button>
+        <a asp-action="Index">Clear</a>
+    </form>
+</body>
+</html>
